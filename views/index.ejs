@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Хэллоуин 2020</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/style.min.css">
+</head>
+<body>
+<div class="d-flex align-items-center min-vh-100 min-vw-100" id="wrapper">
+    <div class="container">
+        <h1 class="display-1 font-weight-bold">Хеллоуинский квест</h1>
+        <% if (!user) { %>
+            <a class="h3 btn btn-dark" href="auth" role="button">Авторизоваться</a>
+        <% } else if (user.imgs) { %>
+            <span class="h1">Привет, <%= user.name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
+            <h3>На сервере "Истории города Доброград" появились загадочные силуэты в окнах. Сможешь найти их?</h3>
+            <% for (var i = 0; i < user.imgs.length; ++i) { %>
+                <% var img = user.imgs[i] %>
+                <div style="background: url('<%= img.url %>'); width: <%= img.w %>; height: <%= img.h %>" class="rounded float-left"></div>
+            <%}%>
+        <% } else { %>
+            <span class="h1">Привет, <%= user.name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
+            <h3>Здесь могут появиться квесты. Заходи сюда почаще!</h3>
+            <div style="background: url('https://i.imgur.com/q7T5u3m.png'); background-size: cover; width: 100px; height: 100px;"></div>
+        <% }%>
+    </div>
+</div>
+</body>
+</html>
