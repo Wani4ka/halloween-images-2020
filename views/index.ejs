@@ -7,23 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/style.min.css">
 </head>
-<body>
-<div class="d-flex align-items-center min-vh-100 min-vw-100" id="wrapper">
-    <div class="container">
-        <h1 class="display-1 font-weight-bold">Хеллоуинский квест</h1>
+<body class="cover">
+<div class="d-flex align-items-center vh-100 vw-100">
+    <div class="container text-center">
+        <h1 class="display-2 text-break display-halloween font-weight-bolder">Хэллоуин</h1>
+        <br>
         <% if (!user) { %>
             <a class="h3 btn btn-dark" href="auth" role="button">Авторизоваться</a>
         <% } else if (user.imgs) { %>
-            <span class="h1">Привет, <%= user.name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
+            <span class="h1 text-break">Привет, <%= user.name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
             <h3>На сервере "Истории города Доброград" появились загадочные силуэты в окнах. Сможешь найти их?</h3>
             <% for (var i = 0; i < user.imgs.length; ++i) { %>
                 <% var img = user.imgs[i] %>
-                <div style="background: url('<%= img.url %>'); width: <%= img.w %>; height: <%= img.h %>" class="rounded float-left"></div>
+                <div class="cover float-left" style="background: url('<%= img.url %>'); width: <%= img.w %>; height: <%= img.h %>"></div>
             <%}%>
         <% } else { %>
-            <span class="h1">Привет, <%= user.name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
-            <h3>Здесь могут появиться квесты. Заходи сюда почаще!</h3>
-            <div style="background: url('https://i.imgur.com/q7T5u3m.png'); background-size: cover; width: 100px; height: 100px;"></div>
+            <span class="h1 text-break">Привет, <%= user.name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
+            <h3>Возможно, в будущем здесь появится что-то интересное. Заходи сюда почаще!</h3>
+            <div class="cover" style="background: url('https://i.imgur.com/q7T5u3m.png'); width: 100px; height: 100px;"></div>
         <% }%>
     </div>
 </div>

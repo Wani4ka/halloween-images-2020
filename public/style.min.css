@@ -1,1 +1,1 @@
-body{background:url(https://i.imgur.com/CFhvOtL.jpg) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover}div#wrapper{text-align:center;text-align:-moz-center;text-align:-webkit-center}
+@font-face{font-family:Halloween;src:url(/assets/font.ttf)}body{background:url(/assets/bg.jpg) no-repeat center center fixed}.cover{-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover}.display-halloween{font-family:Halloween,sans-serif}
