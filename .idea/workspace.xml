@@ -20,7 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dad42766-d1a5-4d92-8e2c-9183570ce1bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/clientside.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/Jmuxf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/M6XKO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/MqY63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/Q0CbT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/Tp5sb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/ZiV4s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/bQm6N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/doQLu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/evIvV.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/h18SD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/jgdQ4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/p3rrq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/shapes/xdOxz.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbg_halloween.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbg_halloween.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +56,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,6 +83,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\dbg_halloween\public\shapes" />
       <recent name="D:\workspace\dbg_halloween" />
       <recent name="D:\workspace\dbg_halloween\public" />
     </key>
@@ -65,7 +92,10 @@
     <configuration name="Start" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <envs>
         <env name="BASE_URL" value="http://localhost:5000/" />
-        <env name="STEAM_APIKEY" value="3A3AC9FFD084BF1E8A50F947005D7A2F" />
+        <env name="STEAM_APIKEY" value="876DF2726C262E53089C6F02E8CFEFA8" />
+        <env name="DB_HOST" value="localhost" />
+        <env name="DB_NAME" value="gmod_dbg_dev" />
+        <env name="DB_USER" value="root" />
       </envs>
       <method v="2" />
     </configuration>
@@ -79,7 +109,9 @@
       <option name="presentableId" value="Default" />
       <updated>1602242180058</updated>
       <workItem from="1602242182129" duration="1085000" />
-      <workItem from="1602256345722" duration="16825000" />
+      <workItem from="1602256345722" duration="17706000" />
+      <workItem from="1602335542924" duration="1861000" />
+      <workItem from="1602689069350" duration="14938000" />
     </task>
     <servers />
   </component>
@@ -102,10 +134,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="596" y="333" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602273727919">
+    <state x="596" y="333" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602691480646">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="596" y="333" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602273727919" />
+    <state x="596" y="333" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602691480646" />
     <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602270551023">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -114,26 +146,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="629" y="318" key="EditFileWatcherDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602270163131" />
-    <state x="1009" y="440" key="EnvironmentVariablesDialog" timestamp="1602271119266">
+    <state x="1009" y="440" key="EnvironmentVariablesDialog" timestamp="1602691478936">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1009" y="440" key="EnvironmentVariablesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602271119266" />
-    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1602274725996">
+    <state x="1009" y="440" key="EnvironmentVariablesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602691478936" />
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1602704213541">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602274725996" />
-    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1602274725996">
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602704213541" />
+    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1602704213541">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602274725996" />
-    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1602274725995">
+    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602704213541" />
+    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1602704213541">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602274725995" />
-    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1602274725996">
+    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602704213541" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1602704213541">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602274725996" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602704213541" />
     <state x="461" y="185" key="SettingsEditor" timestamp="1602270166217">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

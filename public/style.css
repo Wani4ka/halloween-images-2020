@@ -17,3 +17,7 @@ body {
 .display-halloween {
   font-family: Halloween, sans-serif;
 }
+
+.shadowed {
+  text-shadow: 1px 1px 1px #ffffff;
+}
