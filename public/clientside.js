@@ -5,7 +5,8 @@ $(document).ready(() => {
     let canSubmit = () => {
         let ok = true
         responses.forEach((response) => {
-            if (isNaN(parseInt(response.val())))
+            let val = parseInt(response.val())
+            if (isNaN(val) || val < 1 || val > 20)
                 ok = false
         })
         btn.prop('disabled', !ok)

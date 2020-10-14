@@ -19,7 +19,7 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
 
