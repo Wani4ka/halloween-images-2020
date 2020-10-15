@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path'),
+	MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 	entry: {
@@ -18,7 +19,11 @@ module.exports = {
 				loader: 'file-loader',
 			}, {
 				test: /\.styl$/i,
-				use: ['style-loader', 'css-loader', 'stylus-loader'],
+				use: [
+					{loader: MiniCssExtractPlugin.loader, options: {publicPath: '/public'}},
+          			{loader: 'css-loader'},
+          			{loader: 'stylus-loader'}
+				]
 			  },
 		],
 	},
@@ -34,4 +39,10 @@ module.exports = {
 			),
 		},
 	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: '[name].css',
+			chunkFilename: '[id].css'
+		})
+	]
 }
