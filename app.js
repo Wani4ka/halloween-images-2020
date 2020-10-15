@@ -73,5 +73,6 @@ app.post('/submit', async (req, res) => {
 	
 })
 
-app.use('/assets', express.static(path.join(__dirname, 'public')))
+app.use('/dist', express.static(path.join(__dirname, 'dist')))
+app.use('/dist/shapes', express.static(path.join(__dirname, 'shapes')))
 app.listen(config.appPort, () => console.log(`Listening on ${ config.appPort }`));

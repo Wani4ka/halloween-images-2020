@@ -6,9 +6,6 @@ module.exports = {
 		index: './src/index.js',
 		header: './src/header.js',
 	},
-	output: {
-		path: path.resolve(__dirname, 'public'),
-	},
 	module: {
 		rules: [
 			{
@@ -20,7 +17,7 @@ module.exports = {
 			}, {
 				test: /\.styl$/i,
 				use: [
-					{loader: MiniCssExtractPlugin.loader, options: {publicPath: '/public'}},
+					{loader: MiniCssExtractPlugin.loader, options: {publicPath: '/dist'}},
           			{loader: 'css-loader'},
           			{loader: 'stylus-loader'}
 				]
@@ -29,11 +26,11 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'/assets/font.ttf': path.resolve(
+			'/dist/font.ttf': path.resolve(
 				__dirname,
 				'src/font.ttf'
 			),
-			'/assets/bg.jpg': path.resolve(
+			'/dist/bg.jpg': path.resolve(
 				__dirname,
 				'src/bg.jpg'
 			),
