@@ -7,10 +7,10 @@ config.appBaseUrl = process.env.BASE_URL
 config.steamApiKey = process.env.STEAM_APIKEY
 
 config.db = {
-    host: process.env.DB_HOST,
-    name: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    pass: process.env.DB_PASS
+	host: process.env.DB_HOST,
+	name: process.env.DB_NAME,
+	user: process.env.DB_USER,
+	pass: process.env.DB_PASS
 }
 
 // paths to images by their ids

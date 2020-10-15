@@ -1,17 +1,17 @@
 mixin message(name, text)
-    span.h1.text-break.shadowed Привет, #{name}!
-    a.badge.badge-pill.badge-dark(
-        href='/logout'
-        role='button'
-    ) Выйти
-    .d-flex.flex-row.justify-content-around.shadowed
-        if text
-            h3.w-75.text-center= text
-        else
-            h3.w-75.text-center
-                | Ночами тёмными по улицам бродят они. На 
-                a.text-dark(
-                    style={'text-decoration': 'underline'}
-                    href='https://octo.gg/join-dbg'
-                ) востоке города
-                | , за рамами в окнах таясь, то скребутся, то воют. Дома, приютившие их, должны быть непременно отмечены. Взор навостри, вокруг осмотрись, будь осторожен, нечисть ища.
+	span.h1.text-break.shadowed Привет, #{name}!
+	a.badge.badge-pill.badge-dark(
+		href='/auth/logout'
+		role='button'
+	) Выйти
+	.d-flex.flex-row.justify-content-around.shadowed
+		if text
+			h3.w-75.text-center= text
+		else
+			h3.w-75.text-center
+				| Ночами тёмными по улицам бродят они. На 
+				a.text-dark(
+					style={'text-decoration': 'underline'}
+					href='https://octo.gg/join-dbg'
+				) востоке города
+				| , за рамами в окнах таясь, то скребутся, то воют. Дома, приютившие их, должны быть непременно отмечены. Взор навостри, вокруг осмотрись, будь осторожен, нечисть ища.

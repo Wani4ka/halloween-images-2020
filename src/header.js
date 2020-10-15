@@ -1,4 +1,4 @@
 import './bg.jpg'
-import '/assets/font.ttf'
-import './styles.css'
+import './font.ttf'
+import './styles.styl'
 import 'bootstrap/dist/css/bootstrap.min.css'
