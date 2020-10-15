@@ -1,0 +1,50 @@
+include ./mixins/message
+include ./mixins/image
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        title Хэллоуин 2020
+        script(
+            type='text/javascript'
+            src='/assets/header.bundle.js'
+        )
+        meta(
+            name='viewport'
+            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+        )
+        meta(
+            name='mobile-web-app-capable'
+            content='yes'
+        )
+
+body.cover: .container-fluid.mt-5.text-center: .row-fluid
+    h1.pt-5.display-3.text-break.display-halloween.font-weight-bolder.shadowed Хэллоуин
+
+    if !name
+        a.h3.btn.btn-dark(
+            href='/auth'
+            role='button'
+        ) Авторизоваться
+    else
+        +message(name, desc)
+        if imgs
+            .container.text-center.mt-3: .row
+                each img, index in imgs
+                    +image(index, img)
+            button#submitBtn.btn.btn-warning.btn-lg.mb-3(
+                type='button'
+                disabled
+            ) Отметить
+            script(
+                type='text/javascript'
+                src='/assets/index.bundle.js'
+            )
+        else
+            .row.d-flex.justify-content-center: .cover(style={
+                background: 'url("https://i.imgur.com/q7T5u3m.png")',
+                'background-size': '100px 100px',
+                width: '100px',
+                height: '100px',
+            })

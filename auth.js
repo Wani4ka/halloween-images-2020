@@ -8,12 +8,10 @@ passport.use(new SteamStrategy({
     returnURL: config.appBaseUrl + 'auth/return',
     realm: config.appBaseUrl,
     apiKey: config.steamApiKey
-}, async (identifier, profile, done) => {
-    process.nextTick(function () {
-        done(null, {
-            name: profile._json.personaname,
-            steamid: profile._json.steamid
-        })
+}, (identifier, profile, done) => {
+    done(null, {
+        name: profile._json.personaname,
+        steamid: profile._json.steamid
     })
 }))
 

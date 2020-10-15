@@ -9,7 +9,7 @@ const express = require('express'),
 const app = express()
 
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+app.set('view engine', 'pug');
 
 app.use(session({
     secret: 'halloween2020octo :)',
@@ -21,13 +21,14 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
 
     let user = req.user
     if (!user)
         return res.render('index', { name: false, desc: false, imgs: false })
 
-    game.getEventData(user.steamid).then(function(data) {
+    try {
+        let data = await game.getEventData(user.steamid)
 
         if (!data)
             return res.render('index', { name: user.name, desc: false, imgs: false })
@@ -37,15 +38,14 @@ app.get('/', (req, res) => {
         let arr = []
         data.forEach(img => arr.push(config.images[img[2] - 1]))
         res.render('index', { name: user.name, desc: false, imgs: arr })
-
-    }).catch(function(err) {
+    } catch (err) {
         res.render('index', { name: user.name, desc: '' + err, imgs: false })
-    })
+    }
 
 })
 app.use('/auth', require('./auth'))
 
-app.post('/submit', (req, res) => {
+app.post('/submit', async (req, res) => {
 
     let user = req.user
     if (!user)
@@ -55,7 +55,8 @@ app.post('/submit', (req, res) => {
     if (typeof input !== 'string')
         return res.sendStatus(400)
 
-    game.getEventData(user.steamid).then(function(data) {
+    try {
+        let data = await game.getEventData(user.steamid)
 
         if (typeof data === 'string')
             return res.send(JSON.stringify({ msg: data }))
@@ -65,12 +66,11 @@ app.post('/submit', (req, res) => {
         if (arr.join(',') === input)
             game.completeEvent(user.steamid).then(() => res.send('ok'))
         else res.send(JSON.stringify({ msg: 'Что-то не сходится... Найдёшь в себе силы проверить всё ещё раз?' }))
-
-    }).catch(function(err) {
+    } catch (err) {
         console.error(err)
         res.sendStatus(500)
-    })
-
+    }
+    
 })
 
 app.use('/assets', express.static(path.join(__dirname, 'public')))

@@ -1,0 +1,19 @@
+mixin image(index, src)
+    .col-md.mb-3
+        img.img-fluid.p-1.rounded(
+            src=`assets/shapes/${src}.png`
+            style={
+                'background-color': 'orange',
+                height: '316px',
+                width: '142px',
+                alt: `${src}`,
+            }
+        )
+        input.form-control.mt-1.container-fluid.response(
+            style={width: '142px'}
+            type='number'
+            min=1
+            max=20
+            placeholder='Номер дома'
+            id=`response${index}`
+        )
