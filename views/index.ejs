@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Хэллоуин 2020</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script type="text/javascript" src="/assets/header.bundle.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="/assets/style.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body class="cover">
 <div class="container-fluid mt-5 text-center">
@@ -21,41 +19,24 @@
 
     <% } else if (imgs) { %>
 
-        <span class="h1 text-break shadowed">Привет, <%= name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
-        <div class="d-flex flex-row justify-content-around shadowed">
-            <% if (desc) { %>
-                <h3 class="w-75 text-center"><%= desc %></h3>
-            <% } else { %>
-                <h3 class="w-75 text-center">Ночами тёмными по улицам бродят они. На востоке города, за рамами в окнах таясь, то скребутся, то воют. Дома, приютившие их, должны быть непременно отмечены. Взор навостри, вокруг осмотрись, будь осторожен, нечисть ища.</h3>
-            <% } %>
-        </div>
+        <%- include('message', { desc: desc }); %>
 
         <div class="container text-center mt-3">
             <div class="row">
-                <% for (var i = 0; i < imgs.length; ++i) { %>
-                    <% var img = imgs[i] %>
-                    <div class="col-md mb-3">
-                        <img class="img-fluid p-1 rounded" style="background-color: orange; height: 316px; width: 142px;" src="/assets/shapes/<%= img %>.png" alt="<%= img%>">
-                        <input id="response<%= i %>" class="form-control mt-1 container-fluid" style="width: 142px" type="number" min="1" max="20" placeholder="Номер дома">
-                    </div>
-                <%}%>
+                <% imgs.forEach(function(img, i) {%>
+                    <%- include('image', { i: i, img: img }) %>
+                <% }) %>
             </div>
         </div>
 
         <button id="submitBtn" type="button" class="btn btn-warning btn-lg mb-3" disabled>Отметить</button>
-        <script type="text/javascript" src="/assets/clientside.js"></script>
+
+        <script type="text/javascript" src="/assets/index.bundle.js"></script>
 
     <% } else { %>
-            <span class="h1 text-break shadowed">Привет, <%= name %>!</span> <a class="badge badge-pill badge-dark" href="auth/logout" role="button">Выйти</a>
-            <div class="d-flex flex-row justify-content-around shadowed">
-            <% if (desc) { %>
-                <h3 class="w-75 text-center"><%= desc %></h3>
-            <% } else { %>
-                <h3 class="w-75 text-center">Ночами тёмными по улицам бродят они. На востоке города, за рамами в окнах таясь, то скребутся, то воют. Дома, приютившие их, должны быть непременно отмечены. Взор навостри, вокруг осмотрись, будь осторожен, нечисть ища.</h3>
-            <% } %>
-        </div>
-            <div class="cover" style="background: url('https://i.imgur.com/q7T5u3m.png'); width: 100px; height: 100px;"></div>
-        <% }%>
+       <%- include('message', { desc: desc }); %>
+       <div class="cover" style="background: url('https://i.imgur.com/q7T5u3m.png'); width: 100px; height: 100px;"></div>
+    <% }%>
     </div>
 </div>
 

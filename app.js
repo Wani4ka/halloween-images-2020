@@ -29,6 +29,8 @@ app.get('/', (req, res) => {
 
     game.getEventData(user.steamid).then(function(data) {
 
+        if (!data)
+            return res.render('index', { name: user.name, desc: false, imgs: false })
         if (typeof data === 'string')
             return res.render('index', { name: user.name, desc: data, imgs: false })
 

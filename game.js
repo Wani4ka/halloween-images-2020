@@ -1,11 +1,46 @@
-const db = require('./db')
+const mysql = require('mysql2'),
+    config = require('./config')
+
+let db
+
+async function createTable() {
+    await db.execute(`
+        CREATE TABLE IF NOT EXISTS halloween_images (
+            steamid64 VARCHAR(50) NOT NULL,
+            data TINYTEXT NOT NULL,
+            claimed TINYINT NOT NULL DEFAULT 0,
+                PRIMARY KEY (steamid64)
+        )
+    `)
+}
+
+function reconnect() {
+    db = mysql.createConnection({
+        host: config.db.host,
+        database: config.db.name,
+        user: config.db.user,
+        password: config.db.pass,
+    }).promise()
+
+    db.connect().then(createTable).then(() => {
+        db.emit('connect')
+        console.log('Connected to database')
+    }).catch(() => setTimeout(reconnect, 10000))
+
+    db.on('error', function onError(err) {
+        if (err.code === 'ECONNREFUSED' || err.code === 'PROTOCOL_CONNECTION_LOST')
+            reconnect()
+        else throw err
+    })
+}
+reconnect()
 
 const game = {}
 
 game.getEventData = async function(sid64) {
     const [rows] = await db.execute(`SELECT * FROM halloween_images WHERE steamid64=?`, [sid64])
     if (!rows[0])
-        return 'Ночами тёмными по улицам бродят они. На востоке города, за рамами в окнах таясь, то скребутся, то воют. Дома, приютившие их, должны быть непременно отмечены. Взор навостри, вокруг осмотрись, будь осторожен, нечисть ища.'
+        return false
     else if (rows[0].claimed !== 0)
         return 'Хорошая работа! Другой пока что нет.'
     else return JSON.parse(rows[0].data)
