@@ -14,6 +14,7 @@ mixin message(name, text)
 		a.button.tag.is-rounded.is-dark.is-outlined(
 			href='/auth/logout'
 			role='button'
+			tabindex='-1'
 		) Выйти
 		if text
 			.is-size-4= text
@@ -23,5 +24,6 @@ mixin message(name, text)
 				a.has-text-grey-dark(
 					style={'text-decoration': 'underline'}
 					href='https://octo.gg/join-dbg'
+					tabindex='-1'
 				) востоке города
 				| то скребутся, то воют, за рамами в окнах таясь. Дома, приютившие их, непременно должны быть отмечены. Взор навостри, вокруг осмотрись! Будь осторожен, нечисть ища.
