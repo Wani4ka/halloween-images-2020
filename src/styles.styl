@@ -2,7 +2,7 @@
 	font-family Halloween
 	src url(/dist/font.ttf)
 
-body
+.background
 	background url(/dist/bg.jpg) no-repeat center center fixed
 
 .cover
@@ -11,8 +11,28 @@ body
 	background-size cover
 	-o-background-size cover
 
+ .pure-g > div
+	box-sizing border-box
+
+.l-box
+	padding-top 1em
+
 .display-halloween
 	font-family Halloween, sans-serif
 
 .shadowed
 	text-shadow 1px 1px 1px #ffffff
+
+.shape
+	background-color orange
+	pointer-events none
+	user-select none
+	-moz-user-select none
+	-ms-user-select none
+	-webkit-user-select none
+	width 196px
+	height 436px
+	border-radius 3%
+
+html
+	overflow-y auto

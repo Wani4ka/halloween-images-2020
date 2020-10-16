@@ -1,16 +1,26 @@
 mixin message(name, text)
-	span.h1.text-break.shadowed Привет, #{name}!
-	a.badge.badge-pill.badge-dark(
-		href='/auth/logout'
-		role='button'
-	) Выйти
-	.d-flex.flex-row.justify-content-around.shadowed
+	.title.is-1.has-text-weight-bold.is-family-primary Хэллоуин
+
+	if !name
+
+		a.button.is-dark.is-medium(
+			href='/auth'
+			role='button'
+		) Авторизоваться
+
+	else
+
+		span.subtitle.is-3 Привет, #{name}! 
+		a.button.tag.is-rounded.is-dark.is-outlined(
+			href='/auth/logout'
+			role='button'
+		) Выйти
 		if text
-			h3.w-75.text-center= text
+			.is-size-4= text
 		else
-			h3.w-75.text-center
+			.is-size-4
 				| Ночами тёмными по улицам бродят они. На 
-				a.text-dark(
+				a.has-text-grey-dark(
 					style={'text-decoration': 'underline'}
 					href='https://octo.gg/join-dbg'
 				) востоке города

@@ -1,19 +1,12 @@
 mixin image(index, src)
-	.col-md.mb-3
-		img.img-fluid.p-1.rounded(
+	.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4: .l-box
+		img.img-fluid.p-1.rounded.shape(
 			src=`dist/shapes/${src}.png`
-			style={
-				'background-color': 'orange',
-				height: '316px',
-				width: '142px',
-				alt: `${src}`,
-			}
 		)
-		input.form-control.mt-1.container-fluid.response(
-			style={width: '142px'}
-			type='number'
-			min=1
-			max=20
-			placeholder='Номер дома'
+		.control: .select: select(
 			id=`response${index}`
 		)
+			each n in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+				option(
+					value=`${n}`
+				)= `Дом с номером ${n}`
