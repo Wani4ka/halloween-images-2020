@@ -27,7 +27,6 @@ html(lang='ru')
 			href='/dist/header.css'
 		)
 		script(
-			type='text/javascript'
 			src='/dist/header.js'
 		)
 		meta(
@@ -38,27 +37,28 @@ html(lang='ru')
 			name='mobile-web-app-capable'
 			content='yes'
 		)
-body: section.hero.is-fullheight.background.cover.hero-body
-	.container.has-text-centered
-		+message(name, desc)
-		if imgs
-			.section.pure-g
-				each img, index in imgs
-					+image(index, img)
+body
+	.hero.is-fullheight.background.cover.hero-body
+		.container.has-text-centered
+			+message(name, desc)
+			if imgs
+				.section.pure-g
+					each img, index in imgs
+						+image(index, img)
 
-			button#submitBtn.button.is-warning.is-large.mb-3(
-				type='button'
-			) Отметить
-			script(
-				type='text/javascript'
-				src='/dist/index.js'
-			)
+				button#submitBtn.button.is-warning.is-large.mb-3(
+					type='button'
+				) Отправить
 	
-	if name && !imgs
-		nav.is-fixed-bottom
-			.content.container.cover(style={
-				background: 'url("https://i.imgur.com/q7T5u3m.png")',
-				'background-size': '100px 100px',
-				width: '100px',
-				height: '100px',
-			})
+		if name && !imgs
+			nav.is-fixed-bottom
+				.content.container.cover(style={
+					background: 'url("https://i.imgur.com/q7T5u3m.png")',
+					'background-size': '100px 100px',
+					width: '100px',
+					height: '100px',
+				})
+	if imgs
+		script(
+			src='/dist/index.js'
+		)

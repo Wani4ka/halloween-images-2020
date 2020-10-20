@@ -9,21 +9,23 @@ mixin message(name, text)
 		) Авторизоваться
 
 	else
-
 		span.subtitle.is-3 Привет, #{name}! 
 		a.button.tag.is-rounded.is-dark.is-outlined(
 			href='/auth/logout'
 			role='button'
 			tabindex='-1'
 		) Выйти
-		if text
-			.is-size-4= text
-		else
-			.is-size-4
-				| Ночами по улицам тёмными бродят они. На 
-				a.has-text-grey-dark(
-					style={'text-decoration': 'underline'}
-					href='https://octo.gg/join-dbg'
-					tabindex='-1'
-				) востоке города
-				|  то скребутся, то воют, за рамами в окнах таясь. Дома, приютившие их, непременно должны быть отмечены. Взор навостри, вокруг осмотрись! Будь осторожен, нечисть ища.
+		.hero.is-dark.is-bold.mt-1.transparent(
+			style={'border-radius':'15px'}
+		): p
+			if text
+				.is-size-4= text
+			else
+				.is-size-4
+					| Ночами по улицам бродят они. На 
+					a.has-text-light(
+						style={'text-decoration': 'underline'}
+						href='https://octo.gg/join-dbg'
+						tabindex='-1'
+					) востоке города
+					|  то скребутся, то воют, за рамами в окнах таясь. Дома, приютившие их, непременно должны быть отмечены. Взор навостри, вокруг осмотрись! Будь осторожен, нечисть ища.

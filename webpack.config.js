@@ -21,7 +21,7 @@ module.exports = {
           			{loader: 'css-loader'},
           			{loader: 'stylus-loader'}
 				]
-			  },
+			},
 		],
 	},
 	resolve: {
