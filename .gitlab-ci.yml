@@ -1,13 +1,10 @@
-image: debian:latest
-
-production:
-  type: deploy
+deploy:
+  image: ruby:latest
+  stage: deploy
   variables:
     HEROKU_APP_NAME: dbg-halloween2020
-  only:
-    - main
+  before_script:
+    - gem install dpl
+    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
   script:
-  - apt-get update -qy
-  - apt-get install -y ruby-dev
-  - gem install dpl
-  - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
