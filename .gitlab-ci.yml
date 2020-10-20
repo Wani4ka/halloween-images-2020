@@ -3,5 +3,7 @@ deploy:
   variables:
     HEROKU_APP: dbg-halloween2020
   script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP --api-key=$HEROKU_API_KEY
