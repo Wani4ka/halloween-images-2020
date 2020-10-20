@@ -1,0 +1,4 @@
+heroku:
+  script:
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/dbg-halloween2020
+    - git push -f -q heroku HEAD:master
