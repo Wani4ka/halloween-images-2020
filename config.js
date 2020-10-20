@@ -14,6 +14,6 @@ config.db = {
 }
 
 // paths to images by their ids
-config.images = ['evIvV', 'bQm6N', 'Tp5sb', 'h18SD', 'MqY63', 'p3rrq', 'doQLu', 'Q0CbT', 'ZiV4s', 'xdOxz', 'jgdQ4', 'M6XKO', 'Jmuxf']
+config.images = ['zPWQ1', 'iD1fC', 'lWCK2', 'PE0iw', 'ppqC0', 'N4q89', 'dRazV', 'qdIMZ']
 // house numbers by their ids
 config.houses = [3, 7, 9, 13, 1, 7, 8, 10, 13, 1, 8, 3, 5, 6, 8, 10, 13, 15, 2, 6]
