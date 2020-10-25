@@ -26,10 +26,6 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'/dist/font.ttf': path.resolve(
-				__dirname,
-				'src/font.ttf'
-			),
 			'/dist/bg.jpg': path.resolve(
 				__dirname,
 				'src/bg.jpg'
