@@ -26,6 +26,10 @@ html(lang='ru')
 			rel='stylesheet'
 			href='/dist/header.css'
 		)
+		link(
+			rel='stylesheet'
+			href='https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap'
+		)
 		script(src='/dist/header.js')
 		meta(
 			name='viewport'
@@ -44,15 +48,14 @@ body
 					each img, index in imgs
 						+image(index, img)
 
-				button#submitBtn.button.is-warning.is-large.mb-3(type='button') Отправить
-	
-		if name && !imgs
-			nav.is-fixed-bottom
-				.content.container.cover(style={
-					background: 'url("https://i.imgur.com/q7T5u3m.png")',
-					'background-size': '100px 100px',
-					width: '100px',
-					height: '100px',
-				})
+				button#submitBtn.button.is-light.is-outlined.is-large.mb-3(type='button') Отправить
+			if name
+				br
+				a.button.is-rounded.is-light.is-outlined(
+					href='/auth/logout'
+					role='button'
+					tabindex='-1'
+				) Выйти
+
 	if imgs
 		script(src='/dist/index.js')

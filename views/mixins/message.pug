@@ -1,5 +1,5 @@
 mixin message(name, text)
-	.title.is-1.has-text-weight-bold.is-family-primary Хэллоуин
+	.title.has-text-light.is-1.has-text-weight-bold.oswald.is-uppercase Хэллоуин
 
 	if !name
 
@@ -7,21 +7,16 @@ mixin message(name, text)
 			img(src='https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png')
 
 	else
-		span.subtitle.is-3 Привет, #{name}! 
-		a.button.tag.is-rounded.is-dark.is-outlined(
-			href='/auth/logout'
-			role='button'
-			tabindex='-1'
-		) Выйти
-		.hero.is-dark.is-bold.mt-1.p-1.transparent(
+		.subtitle.is-3.has-text-light.has-text-weight-light.oswald Привет, #{name}! 
+		.section.is-bold.mt-1.p-1(
 			style={'border-radius':'15px'}
-		): p
+		)
 			if text
-				.is-size-4= text
+				.is-size-4.has-text-light.oswald= text
 			else
-				.is-size-4
+				.is-size-4.has-text-light.oswald
 					| Ночами по улицам бродят они. На 
-					a.has-text-light(
+					a.has-text-light.oswald(
 						style={'text-decoration': 'underline'}
 						href='https://octo.gg/join-dbg'
 						tabindex='-1'
