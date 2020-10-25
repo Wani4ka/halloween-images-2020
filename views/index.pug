@@ -26,9 +26,7 @@ html(lang='ru')
 			rel='stylesheet'
 			href='/dist/header.css'
 		)
-		script(
-			src='/dist/header.js'
-		)
+		script(src='/dist/header.js')
 		meta(
 			name='viewport'
 			content='width=device-width, initial-scale=1'
@@ -46,9 +44,7 @@ body
 					each img, index in imgs
 						+image(index, img)
 
-				button#submitBtn.button.is-warning.is-large.mb-3(
-					type='button'
-				) Отправить
+				button#submitBtn.button.is-warning.is-large.mb-3(type='button') Отправить
 	
 		if name && !imgs
 			nav.is-fixed-bottom
@@ -59,6 +55,4 @@ body
 					height: '100px',
 				})
 	if imgs
-		script(
-			src='/dist/index.js'
-		)
+		script(src='/dist/index.js')

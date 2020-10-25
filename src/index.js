@@ -10,8 +10,10 @@ $(() => {
 		let ok = !submitting
 		responses.forEach((response) => {
 			let val = parseInt(response.val())
-			if (isNaN(val) || val < 1 || val > 20)
+			if (isNaN(val) || val < 1 || val > 20) {
 				ok = false
+				response.addClass('is-danger')
+			} else response.removeClass('is-danger')
 		})
 		btn.prop('disabled', !ok)
 	}

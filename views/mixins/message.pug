@@ -3,10 +3,8 @@ mixin message(name, text)
 
 	if !name
 
-		a.button.is-dark.is-medium(
-			href='/auth'
-			role='button'
-		) Авторизоваться
+		a(href='/auth')
+			img(src='https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png')
 
 	else
 		span.subtitle.is-3 Привет, #{name}! 
@@ -15,7 +13,7 @@ mixin message(name, text)
 			role='button'
 			tabindex='-1'
 		) Выйти
-		.hero.is-dark.is-bold.mt-1.transparent(
+		.hero.is-dark.is-bold.mt-1.p-1.transparent(
 			style={'border-radius':'15px'}
 		): p
 			if text
