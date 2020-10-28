@@ -1,7 +1,7 @@
 const express = require('express'),
 	passport = require('passport'),
 	session = require('express-session'),
-	config = require('./config'),
+	config = require('config'),
 	path = require('path'),
 	bodyParser = require('body-parser'),
 	game = require('./game')
@@ -36,7 +36,7 @@ app.get('/', async (req, res) => {
 			return res.render('index', { name: user.name, desc: data, imgs: false })
 
 		let arr = []
-		data.forEach(img => arr.push(config.images[img[2] - 1]))
+		data.forEach(img => arr.push(config.get('images')[img[2] - 1]))
 		res.render('index', { name: user.name, desc: false, imgs: arr })
 	} catch (err) {
 		res.render('index', { name: user.name, desc: '' + err, imgs: false })
@@ -62,7 +62,7 @@ app.post('/submit', async (req, res) => {
 			return res.send(JSON.stringify({ msg: data }))
 
 		let arr = []
-		data.forEach(img => arr.push(config.houses[img[0] - 1]))
+		data.forEach(img => arr.push(config.get('houses')[img[0] - 1]))
 		if (arr.join(',') === input)
 			game.completeEvent(user.steamid).then(() => res.send('ok'))
 		else res.send(JSON.stringify({ msg: 'Что-то не сходится... Найдёшь в себе силы проверить всё ещё раз?' }))
@@ -70,9 +70,9 @@ app.post('/submit', async (req, res) => {
 		console.error(err)
 		res.sendStatus(500)
 	}
-	
+
 })
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')))
 app.use('/dist/shapes', express.static(path.join(__dirname, 'shapes')))
-app.listen(config.appPort, () => console.log(`App started on port ${ config.appPort }`));
+app.listen(config.get('port'), () => console.log(`App started on port ${ config.get('port') }`));

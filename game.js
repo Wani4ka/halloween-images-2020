@@ -1,5 +1,5 @@
 const mysql = require('mysql2'),
-	config = require('./config')
+	config = require('config')
 
 let db
 
@@ -14,12 +14,13 @@ async function createTable() {
 	`)
 }
 
+const dbConfig = config.get('db')
 function reconnect() {
 	db = mysql.createConnection({
-		host: config.db.host,
-		database: config.db.name,
-		user: config.db.user,
-		password: config.db.pass,
+		host: dbConfig.host,
+		database: dbConfig.name,
+		user: dbConfig.user,
+		password: dbConfig.pass,
 	}).promise()
 
 	db.connect().then(createTable).then(() => {
