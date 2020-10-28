@@ -75,4 +75,4 @@ app.post('/submit', async (req, res) => {
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')))
 app.use('/dist/shapes', express.static(path.join(__dirname, 'shapes')))
-app.listen(config.appPort, () => console.log(`Listening on ${ config.appPort }`));
+app.listen(config.appPort, () => console.log(`App started on port ${ config.appPort }`));
