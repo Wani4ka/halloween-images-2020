@@ -75,4 +75,5 @@ app.post('/submit', async (req, res) => {
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')))
 app.use('/dist/shapes', express.static(path.join(__dirname, 'shapes')))
+app.use('/favicon.ico', express.static(path.join(__dirname, 'assets', 'favicon.ico')))
 app.listen(config.get('port'), () => console.log(`App started on port ${ config.get('port') }`));

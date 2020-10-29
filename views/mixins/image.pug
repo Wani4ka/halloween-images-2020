@@ -1,7 +1,6 @@
 mixin image(index, src)
 	.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4: .pt-4.container(style={width:'196px'}): .card
-		.card-image: figure.image.is-1by2
-			img.unselectable(src=`dist/shapes/${src}.png`)
+		.card-image: figure.image.is-1by2: img.unselectable(src=`dist/shapes/${src}.png`)
 		.card-content.btm-overlay: .control: input.input(
 			type='text'
 			id=`response${index}`
