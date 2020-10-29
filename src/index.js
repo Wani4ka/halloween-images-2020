@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import axios from 'axios'
 
 $(() => {
 	let btn = $('#submitBtn')
@@ -35,16 +34,18 @@ $(() => {
 		responses.forEach((response) => result.push(response.val()))
 
 		submitting = true
-		let response = await axios.post('/submit', 'data=' + result.join(','))
-		btn.removeClass('is-loading')
-		if (response.code === 500)
-			alert('Произошла непредвиденная ошибка. Сообщи об этом разработчикам.')
-		else if (response.code === 401)
-			window.open('/auth', '_self')
-		else if (response.data === 'ok')
-			window.location.reload()
-		else alert(response.data.msg)
-		submitting = false
+		import('axios').then(async ({default: axios}) => {
+			let response = await axios.post('/submit', 'data=' + result.join(','))
+			btn.removeClass('is-loading')
+			if (response.code === 500)
+				alert('Произошла непредвиденная ошибка. Сообщи об этом разработчикам.')
+			else if (response.code === 401)
+				window.open('/auth', '_self')
+			else if (response.data === 'ok')
+				window.location.reload()
+			else alert(response.data.msg)
+			submitting = false
+		}).catch(console.error)
 
 	})
 })

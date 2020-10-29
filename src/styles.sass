@@ -1,0 +1,39 @@
+@charset 'utf-8'
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap')
+
+html
+	overflow-y: auto !important
+
+.background
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/dist/bg.jpg) no-repeat center center fixed
+
+.cover
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	background-size: cover
+	-o-background-size: cover
+
+.pure-g > div
+	box-sizing: border-box
+
+.unselectable
+	pointer-events: none
+	user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	-webkit-user-select: none
+
+.btm-overlay
+	position: absolute
+	bottom: 0
+
+.oswald
+	font-family: 'Oswald', sans-serif
+
+$card-background-color: goldenrod
+
+@import '../node_modules/bulma/bulma'
+@import '../node_modules/purecss/build/base-min'
+@import '../node_modules/purecss/build/grids-min'
+@import '../node_modules/purecss/build/grids-responsive-min'

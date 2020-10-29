@@ -9,19 +9,16 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/i,
-				use: ['style-loader', 'css-loader'],
-			}, {
-				test: /\.(png|jpe?g|ttf)$/i,
+				test: /\.jpg$/i,
 				loader: 'file-loader',
 			}, {
-				test: /\.styl$/i,
+				test: /\.sass$/,
 				use: [
 					{loader: MiniCssExtractPlugin.loader, options: {publicPath: '/dist'}},
-          			{loader: 'css-loader'},
-          			{loader: 'stylus-loader'}
-				]
-			},
+					{loader: 'css-loader'},
+					{loader: 'sass-loader'},
+				  ]
+			  }
 		],
 	},
 	resolve: {

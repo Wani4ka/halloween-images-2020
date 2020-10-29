@@ -1,2 +1,2 @@
 import './bg.jpg'
-import './styles.styl'
+require('./styles.sass')
