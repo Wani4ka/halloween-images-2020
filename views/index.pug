@@ -37,5 +37,14 @@ body
 					tabindex='-1'
 				) Выйти
 
+		if name
+			nav.is-fixed-bottom: .content.container.has-text-centered.is-max-desktop
+				| Пожалуйста, не отправляй эту ссылку в общие каналы. Если кто-то будет спрашивать про этот сайт, отправляй ссылку в личные сообщения только если считаешь этого человека своим другом. Спасибо.
+				br
+				| Powered by 
+				a.has-text-dark(href='https://octothorp.team/') Octothorp Team
+				|  and 
+				a.has-text-dark(href='https://wani4ka.ru/') Wani4ka.Ru
+
 	if imgs
 		script(src='/dist/index.js')
