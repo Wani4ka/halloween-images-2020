@@ -9,7 +9,7 @@ const express = require('express'),
 const app = express()
 
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug');
+app.set('view engine', 'pug')
 
 app.use(session({
 	secret: 'halloween2020octo :)',
@@ -18,7 +18,7 @@ app.use(session({
 }));
 
 app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.session('steam'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', async (req, res) => {
